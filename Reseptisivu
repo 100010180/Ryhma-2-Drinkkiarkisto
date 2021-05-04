@@ -15,12 +15,12 @@ body {
 
 
 h1 {
-    display: inline-block;
-    width: 100%;
-    margin-left: 16px;
-    text-align: center;
-    font-size: 50px;
-    font-family: "Trattatello", fantasy
+	display: inline-block;
+	width: 100%;
+	margin-left: 16px;
+	text-align: center;
+	font-size: 50px;
+	font-family: "Trattatello", fantasy
 }
 
 #valikko {
@@ -31,8 +31,9 @@ table, th, td {
     border: 2px solid #484848;
 	background-color: #b3b3b3;
 	font-size: 18px;
-	word-break: break-all;
-}
+	word-break: break-word;
+	padding: 2px;
+	}
 
 th {
 	background-color: #404040;
@@ -42,7 +43,7 @@ th {
 }
 
 td {
-	padding: 2.5px;
+	padding: 5px;
 }
 
 table {
@@ -70,8 +71,13 @@ table {
 	margin-top: 20px;
 }
 
+*:focus {
+    outline: none;
+}
+
 .haedrinkki {
 	margin: auto;
+	text-align: center;
 	padding: 10px;
 }
 
@@ -84,7 +90,6 @@ table {
 	border-radius: 9px;
 	margin-right: 5px;
 	margin-top: 20px;
-	height: 110px;
 }
 
 
@@ -114,7 +119,6 @@ nav {
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
   margin-botton: 50px;
-  
 }
 
 nav ul {
@@ -190,7 +194,7 @@ nav ul li a:hover {
 	<br><br>
 	
 	<button type="submit" input type="submit" id="lisays" value="submit" style="margin-left:2px;">Lisää drinkki</button>
-	</form>
+</form>
 
 
 <?php
@@ -300,7 +304,8 @@ $tulos = $yhteys->query($hakusql);
 if ($tulos->num_rows > 0) {
 	echo "<center><table><tr><th>Drinkin nimi</th><th>Drinkin juomalaji</th><th>Drinkin ainesosat</th><th>Drinkin valmistusohje</th></tr></center>";
     while($row = $tulos->fetch_assoc()) {
-        echo "<tr><td style='width: 250px'>" . $row["Nimi"]. "</td><td style='width: 250px'>" . $row["Juomalaji"]. "</td><td style='width: 250px'>" . $row["Ainesosat"]. "</td><td style='width: 250px'>" . $row["Valmistusohje"]. "</td></tr>";    }
+        echo "<tr><td style='width: 250px'>" . $row["Nimi"]. "</td><td style='width: 250px'>" . $row["Juomalaji"]. "</td><td style='width: 250px'>" . $row["Ainesosat"]. "</td><td style='width: 250px'>" . $row["Valmistusohje"]. "</td></tr>";
+    }
     }
 	else {
         echo "<font color='black'>Haku ei tuottanut tuloksia.</font>";
