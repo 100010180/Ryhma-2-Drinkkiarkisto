@@ -16,10 +16,9 @@ body {
 
 h1 {
 	display: inline-block;
-	width: 100%;
-	margin-left: 16px;
 	text-align: center;
 	font-size: 50px;
+	width: 100%
 }
 
 #valikko {
@@ -27,18 +26,16 @@ h1 {
 }
 
 table, th, td {
-    border: 2px solid #484848;
+    border: 1px solid #484848;
 	background-color: #b3b3b3;
 	font-size: 18px;
 	word-break: break-word;
-	padding: 2px;
 	}
 
 th {
 	background-color: #404040;
 	color: 	#e6e6e6;
-	padding-left: 3px;
-	padding-right: 3px;
+
 }
 
 td {
@@ -117,25 +114,28 @@ img {
 nav {
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
-  margin-botton: 50px;
+  margin-botton: 40px;
+  width: auto;
+  text-align: center;
 }
 
 nav ul {
-  text-align: center;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  padding-right: 30px;
 }
 
 nav ul li {
-  display: inline-block;
+  display: inline-block; 
+  margin-right: 5px;
 }
 
 nav ul li a {
-  padding: 18px;
+  padding: 16px;
   font-family: "Open Sans";
-  text-transform:uppercase;
+  text-transform: uppercase;
   color: rgba(0, 35, 122, 0.5);
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
   display: block;
 }
@@ -156,9 +156,9 @@ nav ul li a:hover {
 
 <nav class="sub">
   <ul>
+  <li><a href="profiilisivu.php">Profiili</a></li>  
   <li><a href="etusivu.php">Etusivu</a></li>
-  <li><a href="profiilisivu.php">Profiili</a></li>
-  <li><a href="pelit.php">Reseptit</a></li>
+  <li><a href="pelit.php">Reseptit</a></li> 
 </ul>
 </nav>
 <br>
