@@ -26,7 +26,7 @@ if (!empty($_POST['kayttajatunnus']) || !empty($_POST['salasana'])){
 
         if ($auth) {
             $_SESSION['kayttajatunnus'] = $username;
-            header("Location: esim.php");
+            header("Location: etusivu.html");
             //Laittakaa headerin ^^ locationiin teidän tekemä sivu. Ohjaa automaattisesti sinne kirjautumisen jälkeen.
             }else{
             
