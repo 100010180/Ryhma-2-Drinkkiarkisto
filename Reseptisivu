@@ -163,7 +163,7 @@ nav ul li a:hover {
 
 <nav class="sub">
   <ul>
-  <li><a href="profiilisivu.php">Profiili</a></li>  
+  <li><a href="profiili.php">Profiili</a></li>  
   <li><a href="etusivu.php">Etusivu</a></li>
   <li><a href="lista_resepteista.php">Reseptit</a></li> 
 </ul>
