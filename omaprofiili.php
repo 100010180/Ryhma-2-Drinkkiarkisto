@@ -55,7 +55,61 @@
 </nav>
 
   <h2>Omat tiedot</h2>
+$q=mysqli_query($con, "SELECT * FROM kayttaja WHERE kayttajatunnus='$_SESSION[kayttajatunnus]';");
+			
+			?>
+			<h2 style="text-align: center;">Profili</h2>
+			<?php
+			$row=mysqli_fetch_assoc($q);
+			?>
+			<br>
+			<div style="text-align: center;"><b>Tervetuloa</b>
+			<h3>
+			<?php
+				echo $_SESSION['kayttajatunnus'];
+			?>
+			</h3>
+			</div>
 
+			<?php
+				echo "<b>";
+				echo "<table class='table table-bordered'>";
+				
+				echo "<tr>";
+					echo "<td>";
+						echo "<b> Käyttäjänimi: </b>";
+					echo "</td>";
+
+					echo "<td>";
+						echo $row['kayttajatunnus'];
+					echo "</td>";
+				echo "</tr>";
+
+				echo "<tr>";
+					echo "<td>";
+					echo "<b> Sähkäposti: </b>";
+					echo "</td>";
+
+					echo "<td>";
+						echo $row['sahkoposti'];
+					echo "</td>";
+				echo "</tr>";
+
+				//echo "<tr>";
+				//	echo "<td>";
+				//	echo "<b> Salasana: </b>";
+				//	echo "</td>";
+				//
+				//	echo "<td>";
+				//		echo $row['password'];
+				//	echo "</td>";
+				//echo "</tr>";
+			// Salasanan näyttäminen mielestäni turhaa...
+				echo "</table>";
+				echo "</b>";
+			?>
+		</div>
+	</div>
  
 </div>
   </div>
