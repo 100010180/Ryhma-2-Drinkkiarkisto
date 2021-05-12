@@ -13,7 +13,7 @@
 		background-image: url("tausta.jpg");
 	}
 		.wrapper {
-			margin-top: 150px; 
+			margin-top: 50px; 
 			width: 500px;
 			margin-left: auto;
 			margin-right: auto;
@@ -72,6 +72,12 @@
   			color: rgba(0, 35, 122, 0.7);
 		}
 
+		img {
+			display: inline-block;
+			width: 150px;
+			height: 150px;
+		}
+
 	</style>
 </head>
 <body>
@@ -89,7 +95,9 @@
 		<button class="btn btn-default" style="float: right:" name= 
 		"submit1" type="submit">Muokkaa</button><br>
 		</form>
-		
+
+		<center><img src="profiili.png"></center>
+
 		<div class="wrapper">
 		<?php
 		if(isset($_POST['submit1'])) {
