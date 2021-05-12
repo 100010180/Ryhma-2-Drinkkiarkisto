@@ -1,0 +1,95 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css.css">
+<title>Etusivu</title>
+<style>
+
+Reseptilista > table, th, td {
+    border: 1px solid black;
+	background-color: #b3b3b3;
+	font-size: 18px;
+	word-break: break-word;
+}
+
+Reseptilista > th {
+	background-color: #404040;
+	color: 	#e6e6e6;
+
+}
+
+Reseptilista > td {
+	padding: 5px;
+}
+
+Reseptilista > table {
+	display: inline-block;
+	width: auto;
+	max-width: 50%;
+	margin-right: 10px;
+	border-collapse: collapse;
+	margin: 10px;
+	margin-right: 180px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="sailio">
+<h1>Drinkkiarkisto</h1>
+</div>
+
+<nav class="sub">
+  <ul>
+  <li><a href="profiili.php">Profiili</a></li>  
+  <li><a href="etusivu.php">Etusivu</a></li>
+  <li><a href="lista_resepteista.php">Reseptit</a></li> 
+</ul>
+</nav>
+
+<div id="Reseptilista">
+<h2>Päivän resepti</h2>
+<br>
+<br>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "drinkkiarkisto";
+
+// Luo yhteys
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Tarkista yhteys
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT Nimi, Juomalaji, Ainesosat, Valmistusohje FROM resepti ORDER BY RAND()";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<center><table><tr><th>Drinkin nimi</th><th>Drinkin juomalaji</th><th>Drinkin ainesosat</th><th>Drinkin valmistusohje</th></tr></center>";
+    // Tiedot ulos
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td style='width: 250px'>" . $row["Nimi"]. "</td><td style='width: 250px'>" . $row["Juomalaji"]. "</td><td style='width: 250px'>" . $row["Ainesosat"]. "</td><td style='width: 250px'>" . $row["Valmistusohje"]. "</td></tr>";
+		break;
+    }
+    echo "</table>";
+} else {
+    echo "0 tulosta";
+}
+$conn->close();
+?>
+</div>
+
+<div id="kalenteri">
+<?php
+require('calendar.php');
+?>
+</div>
+
+</body>
+</html>
