@@ -25,7 +25,7 @@ if(!empty($_POST['sahkoposti']) || !empty($_POST['kayttajatunnus']) || !empty($_
     //Tarkistaa onko käyttäjänimi/tunnus varattu
         if(mysqli_num_rows($checkemail)) {
             echo "<div class='form'>
-            <h3>Rekisteräityminen epäonnistui.</h3>
+            <h3>Rekisteröityminen epäonnistui.</h3>
             <br/>Klikkaa tästä <a href='rekisteroidy.php'>rekisteröityäksesi</a>
             <br>
             <br>
@@ -60,7 +60,9 @@ if(!empty($_POST['sahkoposti']) || !empty($_POST['kayttajatunnus']) || !empty($_
     <input type="password" name="salasana" placeholder="Salasana" required />
     <input type="submit" name="submit"  value="Register" />
     </form>
+    <p>Onko sinulla jo käyttäjä? <a href='kirjautuminen.php'>Kirjaudu sisään tästä!</a></p>
     </div>
     <?php } ?>
+
 </body>
 </html>
