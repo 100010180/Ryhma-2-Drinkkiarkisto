@@ -1,17 +1,3 @@
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
---
--- Database: `drinkkiarkisto`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `resepti`
---
-
 CREATE TABLE `resepti` (
   `Resepti_id` int(11) NOT NULL,
   `Nimi` varchar(50) NOT NULL,
